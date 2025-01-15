@@ -1,13 +1,16 @@
-vqa_root: '/export/share/datasets/vision/VQA/Images/mscoco/' #followed by train2014/
-vg_root: '/export/share/datasets/vision/visual-genome/'  #followed by image/
+dataset:
+  vqa_rad:
+    data_dir: './datasets/VQA-RAD'
+  slake:
+    data_dir: './datasets/SLAKE'
+
+vqa_root: './datasets/mscoco/'
+vg_root: './datasets/visual-genome/'
 train_files: ['vqa_train','vqa_val','vg_qa']
 ann_root: 'annotation'
 
-# set pretrained as a file path or an url
-pretrained: 'Path to the checkpoint of pre-trained model'
+pretrained: 'checkpoints/model_base_vqa.pth'
 
-
-# size of vit model; base or large
 vit: 'base'
 batch_size_train: 16 
 batch_size_test: 32 
@@ -19,7 +22,6 @@ image_size: 480
 k_test: 128
 inference: 'generate'
 
-# optimizer
 weight_decay: 0.05
 min_lr: 0
 max_epoch: 130
